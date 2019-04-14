@@ -1,10 +1,10 @@
 === Add Dashboard Columns ===
-Contributors: 23r9i0
+Contributors: kallookoo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L4BFVU5HDJH8S
 Tags: dashboard, widget, dashboard columns, columns, admin
 Requires at least: 3.8
-Tested up to: 4.6
-Stable tag: 1.3.5
+Tested up to: 4.8.1
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,9 @@ This plugin only delete screen_layout_dashboard and screen_layout_dashboard-netw
 Basically because I do not consider it necessary, and may be an established order has not been changed and the number of columns.
 
 == Changelog ==
+
+= 1.4 =
+* Change code for working with WordPress 4.8
 
 = 1.3.5 =
 * Rewrite plugin
