@@ -3,54 +3,36 @@
  * Plugin Name: Add Dashboard Columns
  * Plugin URI: https://wordpress.org/plugins/add-dashboard-columns/
  * Description: Enable Dashboard Columns in WordPress after version 3.8
- * Version: 1.4
+ * Version: 1.4.1
  * Author: Sergio ( kallookoo )
  * Author URI: https://dsergio.com/
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: add-dashboard-columns
- * Domain Path: /languages
  */
 
 defined( 'ABSPATH' ) or exit;
 
 final class Add_Dashboard_Columns {
 
-	private static $instance;
-
-	private $plugin_file;
-
-	private $is_plugin_network;
-
 	public static function admin_init() {
-		return isset( self::$instance ) ? self::$instance : self::$instance = new self;
+		add_action( 'admin_head-index.php', array( __CLASS__, 'admin_head' ), 99 );
+		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'admin_enqueue_scripts' ), 99 );
+		add_filter( 'plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 4 );
 	}
 
-	private function __clone() {}
-
-	private function __wakeup() {}
-
-	private function __construct() {
-		load_plugin_textdomain( 'add-dashboard-columns', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-
-		add_action( 'admin_head-index.php', array( $this, 'admin_head' ), 99 );
-		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ), 99 );
-		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 4 );
-	}
-
-	public function admin_head() {
+	public static function admin_head() {
 		add_screen_option( 'layout_columns', array( 'max' => 4, 'default' => 3 ) );
 	}
 
-	public function admin_enqueue_scripts( $hook ) {
-		if ( 'index.php' !== $hook ) {
-			return;
+	public static function admin_enqueue_scripts( $hook ) {
+		if ( 'index.php' === $hook ) {
+			wp_enqueue_style( 'add-dashboard-columns', plugins_url( '/admin/css/add-dashboard-columns.min.css', __FILE__ ), array(), '1.4.1' );
+			wp_enqueue_script( 'add-dashboard-columns', plugins_url( '/admin/js/add-dashboard-columns.min.js', __FILE__ ), array( 'jquery' ), '1.4.1', true );
 		}
-		wp_enqueue_style( 'add-dashboard-columns', plugins_url( '/admin/css/add-dashboard-columns.css', __FILE__ ), array(), time() );
-		wp_enqueue_script( 'add-dashboard-columns', plugins_url( '/admin/js/add-dashboard-columns.js', __FILE__ ), array( 'jquery' ), time(), true );
 	}
 
-	public function plugin_row_meta( $plugin_meta, $plugin_file, $plugin_data, $status ) {
+	public static function plugin_row_meta( $plugin_meta, $plugin_file, $plugin_data, $status ) {
 		if ( $plugin_file === plugin_basename( __FILE__ ) ) {
 			$plugin_meta[] = sprintf(
 				'<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L4BFVU5HDJH8S">%s</a>',
