@@ -3,8 +3,8 @@ Contributors: 23r9i0
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L4BFVU5HDJH8S
 Tags: dashboard, widget, dashboard columns, columns
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 1.3.1
+Tested up to: 4.5.2
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,9 @@ Enable Dashboard Columns in WordPress 3.8 or later
 * Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+= 1.3.2 =
+* Check support
+* Add donation link in plugin page
 = 1.3.1 =
 * Check support
 = 1.3 =
