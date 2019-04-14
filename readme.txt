@@ -2,9 +2,9 @@
 Contributors: kallookoo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L4BFVU5HDJH8S
 Tags: dashboard, widget, dashboard columns, columns, admin
-Requires at least: 4.6
-Tested up to: 4.9.6
-Stable tag: 1.4.1
+Requires at least: 3.8
+Tested up to: 4.9.8
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,14 @@ This plugin only delete screen_layout_dashboard and screen_layout_dashboard-netw
 Basically because I do not consider it necessary, and may be an established order has not been changed and the number of columns.
 
 == Changelog ==
+
+= 1.5 =
+* Check support
+* Register action and filters if is admin only
+* Move class to child folder
+* Change 3 to 2 on default layout_columns option
+* Use delete_metadata to delete screen_layout_dashboard and screen_layout_dashboard-network
+* Check and pass WordPress Coding Standards for PHP
 
 = 1.4.1 =
 * Change to static class and check support
@@ -53,7 +61,7 @@ Basically because I do not consider it necessary, and may be an established orde
 = 1.3.3 =
 * Check support
 * Use bootstrap media for clean CSS
-* Remove admin_enqueue_script, now uses admin_head-index.php to print Custom CSS
+* Remove admin_enqueue_scripts, now uses admin_head-index.php to print Custom CSS
 
 = 1.3.2 =
 * Check support
