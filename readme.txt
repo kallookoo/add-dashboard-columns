@@ -37,11 +37,11 @@ Note: It does not remove any configuration simply prevents to fire the hook.
 = I activated it but it does not show the layout, what happens? =
 The most certain thing is that the assets are missing, since they are checked to avoid UX issues.
 
-== Other Notes ==
+= Needs support? =
+Please, use the WordPress plugin forums [support](https://wordpress.org/support/plugin/add-dashboard-columns/).
 
-1. If you enjoy using this plugin and find it useful, please consider making a [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=L4BFVU5HDJH8S).
-1. Needs support? Please, use the WordPress plugin forums [support](https://wordpress.org/support/plugin/add-dashboard-columns/).
-1. If you found an error, create an [issue](https://github.com/kallookoo/add-dashboard-columns/issues/new).
+= You found an error? =
+Please, create an [issue](https://github.com/kallookoo/add-dashboard-columns/issues/new).
 
 == Changelog ==
 
